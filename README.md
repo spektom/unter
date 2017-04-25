@@ -19,10 +19,15 @@ Uber-like service :)
 
  * [Yarn](https://yarnpkg.com) >= v0.21.3
  * [Node.js](https://nodejs.org) >= v7.6.0
+ * [RethinkDB](https://rethinkdb.com) - see below how to run it using Docker.
 
 ### Installing dependencies
 
     yarn install 
+    
+### Running RethinkDB as Docker container
+
+    docker run --name rethink -p 28015:28015 -p 8080:8080 -d rethinkdb
 
 ### Running all services
 
@@ -30,7 +35,7 @@ Uber-like service :)
 
 ### Testing
 
-Inspecting incoming user events for userId=1 (open in new window):
+Inspecting incoming user events (for userId=1, which is currently hard-coded):
 
     curl -i -N -H "Connection: Upgrade" \
       -H "Upgrade: websocket" \
